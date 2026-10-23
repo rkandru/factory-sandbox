@@ -1,0 +1,25 @@
+# Factory Contract: this repo opts in to the Agent Factory (agentic-devops
+# GLOSSARY.md). A repo without one is never worked on. Draft schema; ticket 10
+# makes the Dispatcher read it and fixes the format.
+version: 1
+
+harness:
+  # The repo's Harness image, pinned by digest. Set by ticket 06; until then
+  # the factory cannot run here.
+  image: ""
+
+# Commands the Coder runs once after cloning.
+setup: []
+
+# Commands the Coder must run, and pass, before submitting.
+checks:
+  - ./test.sh
+
+# CI checks that must be green before a pull request is marked ready.
+requiredChecks:
+  - ci-gate
+
+# Paths a Submission may not touch, on top of the factory-wide defaults.
+protectedPaths:
+  - .github/
+  - factory-contract.yaml

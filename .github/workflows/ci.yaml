@@ -1,0 +1,23 @@
+# One fast required check on main: the job name `ci-gate` is what branch
+# protection and factory-contract.yaml's requiredChecks refer to.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    name: ci-gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: shellcheck
+        run: shellcheck ./*.sh
+      - name: test
+        run: ./test.sh

@@ -1,0 +1,3 @@
+# Protected Paths: the factory must not change its own gate or its opt-in.
+/.github/              @rkandru
+/factory-contract.yaml @rkandru
