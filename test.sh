@@ -19,5 +19,7 @@ expect() {
 
 expect "Hello, world!" ./greet.sh
 expect "Hello, factory!" ./greet.sh factory
+expect "HELLO, FACTORY!" ./greet.sh --upper factory
+expect "HELLO, WORLD!" ./greet.sh --upper
 
 [ "${failures}" -eq 0 ]
