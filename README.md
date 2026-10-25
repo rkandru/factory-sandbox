@@ -7,6 +7,22 @@ requests never land on the Pilot Repo (agentic-devops ADR 0010). Created from
 except that it is small, has one fast required check (`ci-gate`), and has a
 Factory Contract.
 
+## Usage
+
+Run `greet.sh` without a name to use the default greeting:
+
+```console
+$ ./greet.sh
+Hello, world!
+```
+
+Pass a name to greet someone specifically:
+
+```console
+$ ./greet.sh factory
+Hello, factory!
+```
+
 - `greet.sh`: the code smoke-test Tickets change
 - `test.sh`: the tests (`ci-gate` runs them, along with shellcheck)
 - `factory-contract.yaml`: the opt-in
