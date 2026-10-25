@@ -3,5 +3,11 @@
 # change (agentic-devops ticket 15).
 set -euo pipefail
 
-name="${1:-world}"
-echo "Hello, ${name}!"
+if [[ "${1:-}" == "--upper" ]]; then
+  name="${2:-world}"
+  greeting="Hello, ${name}!"
+  echo "${greeting^^}"
+else
+  name="${1:-world}"
+  echo "Hello, ${name}!"
+fi
