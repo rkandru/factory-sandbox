@@ -21,6 +21,8 @@ expect "Hello, world!" ./greet.sh
 expect "Hello, factory!" ./greet.sh factory
 expect "Goodbye, world!" ./farewell.sh
 expect "Goodbye, factory!" ./farewell.sh factory
+expect "GOODBYE, FACTORY!" ./farewell.sh --upper factory
+expect "GOODBYE, WORLD!" ./farewell.sh --upper
 expect "HELLO, FACTORY!" ./greet.sh --upper factory
 expect "HELLO, WORLD!" ./greet.sh --upper
 
