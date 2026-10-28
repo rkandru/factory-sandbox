@@ -23,6 +23,25 @@ $ ./greet.sh factory
 Hello, factory!
 ```
 
+Run `farewell.sh` without a name to use the default farewell, or pass a name:
+
+```console
+$ ./farewell.sh
+Goodbye, world!
+$ ./farewell.sh factory
+Goodbye, factory!
+```
+
+Both scripts accept `--upper` to print the full message in uppercase. The
+option can be used with or without a name:
+
+```console
+$ ./farewell.sh --upper factory
+GOODBYE, FACTORY!
+$ ./greet.sh --upper
+HELLO, WORLD!
+```
+
 - `greet.sh`: the code smoke-test Tickets change
 - `test.sh`: the tests (`ci-gate` runs them, along with shellcheck)
 - `factory-contract.yaml`: the opt-in
